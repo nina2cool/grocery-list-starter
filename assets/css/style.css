@@ -1,0 +1,27 @@
+body {
+  font-family: 'Zeyada', cursive;
+    color: #333333;
+    font-size: 3em;
+    background-color: #e6ffe6;
+}
+
+h1 {
+    color: #0066ff;
+}
+
+h5 {
+    line-height: 1.5;
+    font-size: 1.2em;
+}
+
+input {
+    margin: 20px;
+}
+
+.input {
+    width: 200px;
+}
+
+.row {
+    margin: 40px 0px;
+}
