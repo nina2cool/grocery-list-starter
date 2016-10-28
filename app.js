@@ -4,45 +4,35 @@ const path = require('path');
 const ejs = require('ejs');
 const app = express();
 const mongoose = require('mongoose');
-
+const methodOverride = require('express-method-override')
 
 app.use(express.static('assets'));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
+// override with POST having ?_method=DELETE
+app.use(methodOverride('_method'))
+
 
 
 mongoose.connect('mongodb://localhost/grocery-list');
 
-const ItemModel = require('./models/ItemModel.js');
 
-/* GET home page. */
-app.get('/', (req, res, next) => {
-    // Here we are asking mongoose to find TaskModels,
-    // we are not passing any specifice attributes, such
-    // as an id, so mongoose will find all tasks.
-  ItemModel.find((err, items) => {
-    // Queries are run asynchronously.
-        // So we have to pass in a callback to be ran when the db query is finished
-    res.render('index', {
-      items: items
-    });
-  });
+// routes
+const ItemRoutes = require('./routes/ItemRoutes');
+
+// Set our routes
+app.use('/items', ItemRoutes);
+
+//left off here - trying to figure out how to edit/delete with form
+// app.use('/:*/itemEdit', ItemEditRoutes);
+
+app.use('/*', function(req, res, next) {
+  res.redirect('/items');
 });
 
-/* POST Create a task. */
-app.post('/items', (req, res, next) => {
-  var item = new ItemModel({
-        text : req.body.text,
-        quantity : req.body.quantity
-  });
-
-  item.save((err, item) => {
-        // Inserts are run asynchronously.
-        // So we have to pass in a callback to be ran when the insert is finished
-    res.redirect('/');
-  });
-});
 
 const port = 3003;
 app.listen(port, () => console.log(`Listening on ${port}`));

@@ -6,8 +6,9 @@
     <title>
         Grocery List App
     </title>
-    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/bootstrap.css" rel="stylesheet">
     <link href="/css/style.css" rel="stylesheet">
+    <script src="https://use.fontawesome.com/badc11c74c.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Zeyada" rel="stylesheet">
 
 </head>
@@ -33,15 +34,48 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-4 col-md-offset-5 text-left">
-                <ul>
+            <div class="col-md-4 col-md-offset-4 text-left">
+
+                <table>
+                    <tr>
+                        <th>
+                            Edit
+                        </th>
+                        <th>
+                            Remove
+                        </th>
+                        <th>
+                            Item
+                        </th>
+                        <th>
+                            Quantity
+                        </th>
+                    </tr>
+
                     <% items.forEach(function(item) { %>
-                        <li>
-                            <%= item.text %> -
+                        <tr>
+
+                            <td>
+                                <a href="/items/<%= item.id %>/edit"><button type="submit"><i class="fa fa-pencil"></i></button></a>
+                            </td>
+                            <td>
+                                <form action="/items/<%= item.id %>?_method=DELETE" method="POST">
+                                    <button type="submit"><i class="fa fa-trash"></i></button>
+                                </form>
+                            </td>
+                            <td>
+                                <%= item.text %>
+                            </td>
+                            <td>
                                 <%= item.quantity %>
-                        </li>
+                            </td>
+
+                        </tr>
                         <% }) %>
-                </ul>
+                </table>
+
+
+
 
             </div>
         </div>

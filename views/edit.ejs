@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>
+        Edit - Grocery List App
+    </title>
+    <link href="/css/bootstrap.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+    <script src="https://use.fontawesome.com/badc11c74c.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Zeyada" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="row text-center">
+            <div class="col-md-12">
+                <h1>Edit Grocery List Item</h1>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12 text-center">
+
+
+                <form action="/items/<%= item.id %>?_method=PUT" method="post">
+                    <input type="text" name="text" placeholder="enter item" value="<%= item.text %>">
+                    <input type="text" name="quantity" placeholder="enter quantity" value="<%= item.quantity %>">
+                    <input type="submit" value="Edit Item">
+                </form>
+            </div>
+        </div>
+
+
+
+
+
+
+    </div>
+</body>
+
+</html>
