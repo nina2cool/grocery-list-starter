@@ -9,8 +9,7 @@
     <link href="/css/bootstrap.css" rel="stylesheet">
     <link href="/css/style.css" rel="stylesheet">
     <script src="https://use.fontawesome.com/badc11c74c.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Zeyada" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css?family=Schoolbell" rel="stylesheet">
 </head>
 
 <body>
@@ -29,26 +28,26 @@
                 <form action="/items" method="post">
                     <input type="text" name="text" placeholder="enter item">
                     <input type="text" name="quantity" placeholder="enter quantity">
-                    <input type="submit" value="+ Add Item">
+                    <input class="btn btn-primary" type="submit" value="+ Add Item">
                 </form>
             </div>
         </div>
         <div class="row">
-            <div class="col-md-4 col-md-offset-4 text-left">
+            <div class="col-md-4 col-md-offset-3 text-left">
 
                 <table>
                     <tr>
-                        <th>
-                            Edit
-                        </th>
-                        <th>
-                            Remove
-                        </th>
                         <th>
                             Item
                         </th>
                         <th>
                             Quantity
+                        </th>
+                        <th>
+                            Edit
+                        </th>
+                        <th>
+                            Remove
                         </th>
                     </tr>
 
@@ -56,27 +55,23 @@
                         <tr>
 
                             <td>
-                                <a href="/items/<%= item.id %>/edit"><button type="submit"><i class="fa fa-pencil"></i></button></a>
-                            </td>
-                            <td>
-                                <form action="/items/<%= item.id %>?_method=DELETE" method="POST">
-                                    <button type="submit"><i class="fa fa-trash"></i></button>
-                                </form>
-                            </td>
-                            <td>
                                 <%= item.text %>
                             </td>
                             <td>
                                 <%= item.quantity %>
                             </td>
+                            <td>
+                                <a href="/items/<%= item.id %>/edit" class="icons"><button type="submit"><i class="fa fa-pencil"></i></button></a>
+                            </td>
+                            <td>
+                                <form action="/items/<%= item.id %>?_method=DELETE" method="POST">
+                                    <button type="submit" class="icons"><i class="fa fa-trash"></i></button>
+                                </form>
+                            </td>
 
                         </tr>
                         <% }) %>
                 </table>
-
-
-
-
             </div>
         </div>
     </div>

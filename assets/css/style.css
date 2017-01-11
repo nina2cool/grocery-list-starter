@@ -1,46 +1,77 @@
 body {
-    font-family: 'Zeyada', cursive;
+    font-family: 'Schoolbell', cursive;
     color: #333333;
-    font-size: 3em;
-    background-color: #e6ffe6;
+    font-size: 2em;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../img/background.jpg) no-repeat center;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
 }
 
 h1 {
-    color: #0066ff;
+    color: #f2f2f2;
+    font-size: 2em;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 15px;
 }
 
-h5 {
-    line-height: 1.5;
-    font-size: 1.2em;
+.btn-primary {
+    margin: 0;
 }
 
 input {
     margin: 20px;
+    padding: 5px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 5px;
+    font-size: 15px;
 }
 
 .input {
     width: 200px;
+    padding: 5px;
+    background: rgba(255, 255, 255, 0.8);
 }
 
-.row {
-    margin: 40px 0px;
-}
-
-.form-list-item {
-    list-style: none;
-    display: inline;
+form {
+    font-family: sans-serif;
+    font-size: 0.5em;
 }
 
 table {
-    width: 100%;
+    background: rgba(255, 255, 255, 0.8);
+    text-align: center;
 }
 
 td, tr, th {
-    padding: 10px;
-    border: 1px solid #d9d9d9;
-    width: 100%;
+    padding: 5px;
+    border: 1px solid #999;
+    text-align: center;
 }
 
-td {
-    /*width: 150px;*/
+th {
+    background-color: rgba(173, 216, 230, 0.8);
+}
+
+td, th {
+    min-width: 140px;
+}
+
+.icons, .icons button {
+    background: none;
+    box-shadow: none;
+    border: none;
+    font-size: 25px;
+    padding: 0;
+    margin: 0;
+    color: #4285F4;
+}
+
+.icons:hover, .icons button:hover {
+    color: #0d47a1;
+    transform: translate(2px, 2px);
+}
+
+.fa-pencil {
+    margin-top: 10px;
 }

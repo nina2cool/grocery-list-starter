@@ -9,7 +9,7 @@
     <link href="/css/bootstrap.css" rel="stylesheet">
     <link href="/css/style.css" rel="stylesheet">
     <script src="https://use.fontawesome.com/badc11c74c.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Zeyada" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Schoolbell" rel="stylesheet">
 
 </head>
 
@@ -25,19 +25,13 @@
         <div class="row">
             <div class="col-md-12 text-center">
 
-
                 <form action="/items/<%= item.id %>?_method=PUT" method="post">
                     <input type="text" name="text" placeholder="enter item" value="<%= item.text %>">
                     <input type="text" name="quantity" placeholder="enter quantity" value="<%= item.quantity %>">
-                    <input type="submit" value="Edit Item">
+                    <input class="btn btn-primary" type="submit" value="Edit Item">
                 </form>
             </div>
         </div>
-
-
-
-
-
 
     </div>
 </body>

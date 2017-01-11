@@ -7,8 +7,6 @@ module.exports = {
             res.render('index', {
                 items: items
             });
-            // return res.json(items);
-
         })
     },
 
@@ -20,11 +18,6 @@ module.exports = {
         }, function(err, item) {
             return res.json(item);
         });
-
-        // ItemModel.find((err, item) => {
-        // res.render('index', {
-        //     item: item
-        // });
     },
 
 
@@ -35,10 +28,7 @@ module.exports = {
         });
 
         item.save((err, item) => {
-            // return res.json(item);
-
             res.redirect('/items');
-
         });
     },
 
@@ -54,7 +44,6 @@ module.exports = {
                 item.quantity = req.body.quantity;
 
                 item.save(function(err, item) {
-                    // return res.json(item);
                   res.redirect('/items');
                 });
             });
@@ -89,9 +78,6 @@ module.exports = {
                     quantity: quantity
 
                 });
-
-
-
             });
     }
 
